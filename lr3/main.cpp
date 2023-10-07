@@ -1,22 +1,28 @@
 #include <iostream>
 using namespace std;
 
+int fibbonachi (int N){
+int ticker = 0;
+int a = 0, b = 1, nextTerm;
+cout << "Ряд чисел Фиббоначчи до " << N << " итераций:";
+
+for (int i = 1; i<= N; i++){
+if (ticker == 3)
+{
+    cout << a << " ";
+    ticker = 0;
+}
+  nextTerm = a + b;
+  a = b;
+  b = nextTerm;
+  ticker++;
+}
+return 0;
+}
 int main() {
-int N;
+int iteration = 0;
 cout<< "Введите количество итераций N: ";
-cin>> N;
+cin>> iteration;
+fibbonachi(iteration);
 
-   int a = 0, b = 1, nextTerm;
-cout<< "Ряд чисел Фибоначчи до " <<N<< " итераций: ";
-
-for (int i = 1; i<= N; i+=2) {
-cout<< a << " ";
-nextTerm = a + b;
-      a = b;
-      b = nextTerm;
-      nextTerm = a + b;
-      a = b;
-      b = nextTerm;
-   }
-   return 0;
 }
