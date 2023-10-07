@@ -9,9 +9,12 @@ cin>> N;
    int a = 0, b = 1, nextTerm;
 cout<< "Ряд чисел Фибоначчи до " <<N<< " итераций: ";
 
-for (int i = 1; i<= N; ++i) {
+for (int i = 1; i<= N; i+=2) {
 cout<< a << " ";
 nextTerm = a + b;
+      a = b;
+      b = nextTerm;
+      nextTerm = a + b;
       a = b;
       b = nextTerm;
    }
